@@ -1,4 +1,5 @@
 from contextlib import asynccontextmanager
+from app.db.indexes import create_indexes
 from app.database import database
 from fastapi import FastAPI
 
@@ -16,7 +17,9 @@ async def lifespan(app: FastAPI):
     database_available = await check_database_connection()
 
     if database_available:
-        print("MongoDB connection successful.")
+        print("MongoDB connection Successful.")
+        await create_indexes()
+        print("Database indexes created.")
     else:
         print("WARNING: MongoDB connection failed.")
 
@@ -24,7 +27,6 @@ async def lifespan(app: FastAPI):
 
     print("Shutting down application...")
     await close_database_connection()
-
 
 app = FastAPI(
     title=settings.app_name,
