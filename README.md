@@ -1,20 +1,22 @@
-# AI Legal Assistance Backend
+## Configuration
 
-FastAPI backend for an AI-powered legal assistance web application.
+Create a `.env` file in the backend root directory.
 
-## Current Status
+Example:
 
-Section 01 - FastAPI Project Setup
+```env
+APP_NAME=AI Legal Assistance API
+APP_VERSION=0.1.0
+ENVIRONMENT=development
 
-## Technology
+MONGODB_URL=mongodb://localhost:27017
+MONGODB_DATABASE=legal_assistance
 
-- Python
-- FastAPI
-- Uvicorn
+JWT_SECRET=your-development-secret
+JWT_ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
 
-## Running the Backend
+LLM_API_KEY=
 
-Activate the virtual environment and run:
-
-```bash
-uvicorn app.main:app --reload
+UPLOAD_DIR=uploads
+MAX_UPLOAD_SIZE_MB=10
