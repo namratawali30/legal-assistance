@@ -2,6 +2,7 @@ from contextlib import asynccontextmanager
 from app.db.indexes import create_indexes
 from app.database import database
 from fastapi import FastAPI
+from app.api.auth import router as auth_router
 
 from app.config import settings
 from app.database import (
@@ -37,6 +38,7 @@ app = FastAPI(
     version=settings.app_version,
     lifespan=lifespan,
 )
+app.include_router(auth_router)
 
 
 @app.get("/")
