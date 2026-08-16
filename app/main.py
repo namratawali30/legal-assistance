@@ -1,6 +1,29 @@
+from contextlib import asynccontextmanager
+from app.database import database
 from fastapi import FastAPI
 
 from app.config import settings
+from app.database import (
+    check_database_connection,
+    close_database_connection,
+)
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    print("Starting application...")
+
+    database_available = await check_database_connection()
+
+    if database_available:
+        print("MongoDB connection successful.")
+    else:
+        print("WARNING: MongoDB connection failed.")
+
+    yield
+
+    print("Shutting down application...")
+    await close_database_connection()
 
 
 app = FastAPI(
@@ -10,6 +33,7 @@ app = FastAPI(
         "application using Retrieval-Augmented Generation."
     ),
     version=settings.app_version,
+    lifespan=lifespan,
 )
 
 
@@ -22,7 +46,11 @@ async def root():
 
 @app.get("/health")
 async def health_check():
+    database_available = await check_database_connection()
+
     return {
-        "status": "healthy",
+        "status": "healthy" if database_available else "unhealthy",
         "environment": settings.environment,
+        "database": "connected" if database_available else "disconnected",
     }
+
