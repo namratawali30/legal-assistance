@@ -3,6 +3,7 @@ from app.db.indexes import create_indexes
 from app.database import database
 from fastapi import FastAPI
 from app.api.auth import router as auth_router
+from app.api.chat import router as chat_router
 
 from app.config import settings
 from app.database import (
@@ -39,14 +40,18 @@ app = FastAPI(
     lifespan=lifespan,
 )
 app.include_router(auth_router)
+app.include_router(chat_router)
 
 
-@app.get("/")
-async def root():
-    return {
-        "message": "AI Legal Assistance API is running"
-    }
+# @app.get("/")
+# async def root():
+#     return {
+#         "message": "AI Legal Assistance API is running"
+#     }
 
+@app.on_event("startup")
+async def startup_event():
+    await create_indexes()
 
 @app.get("/health")
 async def health_check():
