@@ -1,0 +1,151 @@
+{
+  "version": "1.0",
+  "queries": [
+    {
+      "id": "consumer_01",
+      "question": "How can a consumer file a complaint against a seller?",
+      "category": "consumer_rights",
+      "expected_source": "consumer_protection_act_2019",
+      "supported": true
+    },
+    {
+      "id": "consumer_02",
+      "question": "What happens after a consumer complaint is admitted?",
+      "category": "consumer_rights",
+      "expected_source": "consumer_protection_act_2019",
+      "supported": true
+    },
+    {
+      "id": "consumer_03",
+      "question": "Where can I complain about defective goods?",
+      "category": "consumer_rights",
+      "expected_source": "consumer_protection_act_2019",
+      "supported": true
+    },
+
+    {
+      "id": "labour_01",
+      "question": "Can an employer pay a worker less than the minimum wage?",
+      "category": "labour_rights",
+      "expected_source": "code_on_wages_2019",
+      "supported": true
+    },
+    {
+      "id": "labour_02",
+      "question": "What does Indian law say about minimum wages for employees?",
+      "category": "labour_rights",
+      "expected_source": "code_on_wages_2019",
+      "supported": true
+    },
+    {
+      "id": "labour_03",
+      "question": "Can wages be deducted from an employee?",
+      "category": "labour_rights",
+      "expected_source": "code_on_wages_2019",
+      "supported": true
+    },
+
+    {
+      "id": "workplace_01",
+      "question": "What can a woman do if she faces sexual harassment at her workplace?",
+      "category": "womens_safety",
+      "expected_source": "posh_act_2013",
+      "supported": true
+    },
+    {
+      "id": "workplace_02",
+      "question": "How can an employee complain about workplace sexual harassment?",
+      "category": "womens_safety",
+      "expected_source": "posh_act_2013",
+      "supported": true
+    },
+
+    {
+      "id": "domestic_01",
+      "question": "What protection can a woman seek against domestic violence?",
+      "category": "womens_safety",
+      "expected_source": "domestic_violence_act_2005",
+      "supported": true
+    },
+    {
+      "id": "domestic_02",
+      "question": "Can a woman obtain a protection order against domestic abuse?",
+      "category": "womens_safety",
+      "expected_source": "domestic_violence_act_2005",
+      "supported": true
+    },
+
+    {
+      "id": "education_01",
+      "question": "Does a child have a right to free and compulsory education?",
+      "category": "educational_rights",
+      "expected_source": "rte_act_2009",
+      "supported": true
+    },
+    {
+      "id": "education_02",
+      "question": "What are the rights of a child under the Right to Education Act?",
+      "category": "educational_rights",
+      "expected_source": "rte_act_2009",
+      "supported": true
+    },
+
+    {
+      "id": "ragging_01",
+      "question": "What actions are considered ragging in a college?",
+      "category": "anti_ragging",
+      "expected_source": "ugc_anti_ragging_summary_2009",
+      "supported": true
+    },
+    {
+      "id": "ragging_02",
+      "question": "Does bullying and exclusion of another student count as ragging?",
+      "category": "anti_ragging",
+      "expected_source": "ugc_anti_ragging_third_amendment_2016",
+      "supported": true
+    },
+
+    {
+      "id": "unsupported_01",
+      "question": "What is the punishment for cryptocurrency tax fraud in India?",
+      "category": null,
+      "expected_source": null,
+      "supported": false
+    },
+    {
+      "id": "unsupported_02",
+      "question": "How do I register a patent for a new invention?",
+      "category": null,
+      "expected_source": null,
+      "supported": false
+    },
+    {
+      "id": "unsupported_03",
+      "question": "What are the inheritance rights of a Hindu son?",
+      "category": null,
+      "expected_source": null,
+      "supported": false
+    },
+    {
+      "id": "unsupported_04",
+      "question": "How can I get bail after being arrested for theft?",
+      "category": null,
+      "expected_source": null,
+      "supported": false
+    },
+    {
+      "id": "unsupported_05",
+      "question": "What are the income tax rates for salaried employees?",
+      "category": null,
+      "expected_source": null,
+      "supported": false
+    },
+    {
+      "id": "unsupported_06",
+      "question": "What documents are required to register a company in India?",
+      "category": null,
+      "expected_source": null,
+      "supported": false
+    }
+  ]
+}

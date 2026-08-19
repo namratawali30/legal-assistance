@@ -24,6 +24,7 @@ def build_message_document(
     role: str,
     content: str,
     sources: list[dict] | None = None,
+    status: str = "completed",
 ) -> dict[str, Any]:
     return {
         "session_id": session_id,
@@ -32,4 +33,5 @@ def build_message_document(
         "content": content,
         "sources": sources or [],
         "created_at": datetime.now(timezone.utc),
+        "status": status,
     }

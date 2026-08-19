@@ -11,20 +11,21 @@ from app.schemas.chat import (
     ChatCreate,
     ChatDetailResponse,
     ChatResponse,
+    ChatTurnResponse,
     ChatUpdate,
     MessageCreate,
     MessageResponse,
 )
 from app.services.chat_service import (
-    add_message,
+    create_legal_chat_turn,
     create_session,
     delete_session,
     find_session,
     list_session_messages,
     list_user_sessions,
     update_session,
+    retry_failed_assistant_message,
 )
-
 
 router = APIRouter(
     prefix="/api/v1/chats",
@@ -123,6 +124,7 @@ async def get_chat_detail(
                 "role": message["role"],
                 "content": message["content"],
                 "sources": message.get("sources", []),
+                "status": message.get("status", "completed"),
                 "created_at": message["created_at"],
             }
             for message in messages
@@ -216,14 +218,12 @@ async def delete_chat(
             detail="Chat session not found",
         )
 
-    return Response(
-        status_code=status.HTTP_204_NO_CONTENT
-    )
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
 
 
 @router.post(
     "/{session_id}/messages",
-    response_model=MessageResponse,
+    response_model=ChatTurnResponse,
     status_code=status.HTTP_201_CREATED,
 )
 async def create_message(
@@ -242,30 +242,81 @@ async def create_message(
             detail="Chat session not found",
         )
 
-    message_id = await add_message(
+    result = await create_legal_chat_turn(
         session_id=session["_id"],
         user_id=current_user["_id"],
-        role="user",
         content=message_data.content,
     )
 
-    messages = await list_session_messages(
-        session_id=session["_id"],
+    if not result:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Chat session not found",
+        )
+
+    user_message = result["user_message"]
+    assistant_message = result["assistant_message"]
+
+    return {
+        "user_message": {
+            "id": str(user_message["_id"]),
+            "session_id": str(user_message["session_id"]),
+            "role": user_message["role"],
+            "content": user_message["content"],
+            "sources": user_message.get("sources", []),
+            "status": user_message.get("status", "completed"),
+            "created_at": user_message["created_at"],
+        },
+        "assistant_message": {
+            "id": str(assistant_message["_id"]),
+            "session_id": str(assistant_message["session_id"]),
+            "role": assistant_message["role"],
+            "content": assistant_message["content"],
+            "sources": assistant_message.get("sources", []),
+            "status": assistant_message.get("status", "completed"),
+            "created_at": assistant_message["created_at"],
+        },
+    }
+
+
+# ✅ NEW RETRY ENDPOINT
+@router.post(
+    "/{session_id}/messages/{message_id}/retry",
+    response_model=MessageResponse,
+    status_code=status.HTTP_200_OK,
+)
+async def retry_message(
+    session_id: str,
+    message_id: str,
+    current_user: dict = Depends(get_current_user),
+):
+    session = await find_session(
+        session_id=session_id,
+        user_id=current_user["_id"],
     )
 
-    message = next(
-        (
-            item
-            for item in messages
-            if item["_id"] == message_id
-        ),
-        None,
-    )
+    if not session:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Chat session not found",
+        )
+
+    try:
+        message = await retry_failed_assistant_message(
+            session_id=session["_id"],
+            message_id=message_id,
+            user_id=current_user["_id"],
+        )
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(exc),
+        )
 
     if not message:
         raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Message was created but could not be retrieved",
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Message not found",
         )
 
     return {
@@ -274,6 +325,7 @@ async def create_message(
         "role": message["role"],
         "content": message["content"],
         "sources": message.get("sources", []),
+        "status": message.get("status", "completed"),
         "created_at": message["created_at"],
     }
 
@@ -303,13 +355,14 @@ async def list_messages(
     )
 
     return [
-        {
-            "id": str(message["_id"]),
-            "session_id": str(message["session_id"]),
-            "role": message["role"],
-            "content": message["content"],
-            "sources": message.get("sources", []),
-            "created_at": message["created_at"],
-        }
-        for message in messages
-    ]
+    {
+        "id": str(message["_id"]),
+        "session_id": str(message["session_id"]),
+        "role": message["role"],
+        "content": message["content"],
+        "sources": message.get("sources", []),
+        "status": message.get("status", "completed"),
+        "created_at": message["created_at"],
+    }
+    for message in messages
+]

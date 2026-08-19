@@ -10,7 +10,9 @@ from app.database import (
     check_database_connection,
     close_database_connection,
 )
-
+from app.api.complaint import (
+    router as complaint_router,
+)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -41,7 +43,7 @@ app = FastAPI(
 )
 app.include_router(auth_router)
 app.include_router(chat_router)
-
+app.include_router(complaint_router)
 
 # @app.get("/")
 # async def root():
@@ -49,9 +51,6 @@ app.include_router(chat_router)
 #         "message": "AI Legal Assistance API is running"
 #     }
 
-@app.on_event("startup")
-async def startup_event():
-    await create_indexes()
 
 @app.get("/health")
 async def health_check():

@@ -1,0 +1,104 @@
+{
+  "documents": 8,
+  "total_provisions": 291,
+  "total_errors": 0,
+  "total_warnings": 2,
+  "corpus_issues": [],
+  "results": [
+    {
+      "source_id": "consumer_protection_act_2019",
+      "file": "C:\\Users\\namra\\OneDrive\\Desktop\\112\\backend\\knowledge_base\\parsed\\consumer_rights\\consumer_protection_act_2019.json",
+      "provisions": 107,
+      "errors": [],
+      "warnings": [
+        {
+          "severity": "warning",
+          "type": "suspiciously_long",
+          "provision": "1",
+          "message": "Provision text is 23254 characters"
+        }
+      ],
+      "error_count": 0,
+      "warning_count": 1,
+      "status": "passed"
+    },
+    {
+      "source_id": "ugc_anti_ragging_second_amendment_2013",
+      "file": "C:\\Users\\namra\\OneDrive\\Desktop\\112\\backend\\knowledge_base\\parsed\\anti_ragging\\higher_education\\ugc_anti_ragging_second_amendment_2013.json",
+      "provisions": 1,
+      "errors": [],
+      "warnings": [],
+      "error_count": 0,
+      "warning_count": 0,
+      "status": "passed"
+    },
+    {
+      "source_id": "ugc_anti_ragging_summary_2009",
+      "file": "C:\\Users\\namra\\OneDrive\\Desktop\\112\\backend\\knowledge_base\\parsed\\anti_ragging\\higher_education\\ugc_anti_ragging_summary_2009.json",
+      "provisions": 5,
+      "errors": [],
+      "warnings": [],
+      "error_count": 0,
+      "warning_count": 0,
+      "status": "passed"
+    },
+    {
+      "source_id": "ugc_anti_ragging_third_amendment_2016",
+      "file": "C:\\Users\\namra\\OneDrive\\Desktop\\112\\backend\\knowledge_base\\parsed\\anti_ragging\\higher_education\\ugc_anti_ragging_third_amendment_2016.json",
+      "provisions": 2,
+      "errors": [],
+      "warnings": [],
+      "error_count": 0,
+      "warning_count": 0,
+      "status": "passed"
+    },
+    {
+      "source_id": "rte_act_2009",
+      "file": "C:\\Users\\namra\\OneDrive\\Desktop\\112\\backend\\knowledge_base\\parsed\\educational_rights\\school_education\\rte_act_2009.json",
+      "provisions": 39,
+      "errors": [],
+      "warnings": [],
+      "error_count": 0,
+      "warning_count": 0,
+      "status": "passed"
+    },
+    {
+      "source_id": "code_on_wages_2019",
+      "file": "C:\\Users\\namra\\OneDrive\\Desktop\\112\\backend\\knowledge_base\\parsed\\labour_rights\\wages\\code_on_wages_2019.json",
+      "provisions": 70,
+      "errors": [],
+      "warnings": [
+        {
+          "severity": "warning",
+          "type": "suspiciously_short",
+          "provision": "39",
+          "message": "Provision text is only 36 characters"
+        }
+      ],
+      "error_count": 0,
+      "warning_count": 1,
+      "status": "passed"
+    },
+    {
+      "source_id": "domestic_violence_act_2005",
+      "file": "C:\\Users\\namra\\OneDrive\\Desktop\\112\\backend\\knowledge_base\\parsed\\womens_safety\\domestic\\domestic_violence_act_2005.json",
+      "provisions": 37,
+      "errors": [],
+      "warnings": [],
+      "error_count": 0,
+      "warning_count": 0,
+      "status": "passed"
+    },
+    {
+      "source_id": "posh_act_2013",
+      "file": "C:\\Users\\namra\\OneDrive\\Desktop\\112\\backend\\knowledge_base\\parsed\\womens_safety\\workplace\\posh_act_2013.json",
+      "provisions": 30,
+      "errors": [],
+      "warnings": [],
+      "error_count": 0,
+      "warning_count": 0,
+      "status": "passed"
+    }
+  ],
+  "status": "passed"
+}

@@ -5,11 +5,11 @@ from pydantic import BaseModel, Field
 
 
 class LegalCategory(str, Enum):
-    CYBERCRIME = "cybercrime"
     CONSUMER_RIGHTS = "consumer_rights"
     LABOUR_RIGHTS = "labour_rights"
     WOMENS_SAFETY = "womens_safety"
-    POLICE_COMPLAINTS = "police_complaints"
+    EDUCATIONAL_RIGHTS = "educational_rights"
+    ANTI_RAGGING = "anti_ragging"
 
 
 class ChatCreate(BaseModel):
@@ -46,7 +46,13 @@ class MessageResponse(BaseModel):
     sources: list[dict] = Field(
         default_factory=list
     )
+    status: str = "completed"
     created_at: datetime
+
+
+class ChatTurnResponse(BaseModel):
+    user_message: MessageResponse
+    assistant_message: MessageResponse
 
 
 class ChatResponse(BaseModel):

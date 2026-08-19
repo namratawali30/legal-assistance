@@ -1,0 +1,104 @@
+{
+  "version": "1.0",
+  "downloads": {
+    "consumer_protection_act_2019": {
+      "source_id": "consumer_protection_act_2019",
+      "title": "The Consumer Protection Act, 2019",
+      "authority": "India Code",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/16939/1/a2019-35.pdf",
+      "local_path": "knowledge_base/raw/consumer_rights/consumer_protection_act_2019.pdf",
+      "checksum_sha256": "50120b13c8b6d7aa26369cd23aa0077f7bab58f52a082d5a63ce00c0a2088ac5",
+      "downloaded_at": "2026-08-17T07:09:52.746605+00:00",
+      "last_verified_at": "2026-08-17T07:09:52.746605+00:00",
+      "size_bytes": 727158
+    },
+    "code_on_wages_2019": {
+      "source_id": "code_on_wages_2019",
+      "title": "The Code on Wages, 2019",
+      "authority": "India Code",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15793/1/aA2019-29.pdf",
+      "local_path": "knowledge_base/raw/labour_rights/code_on_wages_2019.pdf",
+      "checksum_sha256": "846f2e2745d8a9bc6a6503ca13fb3b5ee9a6d74f364b8179547739090c54cf7f",
+      "downloaded_at": "2026-08-17T07:09:53.952709+00:00",
+      "last_verified_at": "2026-08-17T07:09:53.952709+00:00",
+      "size_bytes": 456927
+    },
+    "posh_act_2013": {
+      "source_id": "posh_act_2013",
+      "title": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "authority": "India Code",
+      "source_url": "https://upload.indiacode.nic.in/view-casepdf?id=AC_CEN_13_14_00009_201314_1517807327213&type=act",
+      "local_path": "knowledge_base/raw/womens_safety/workplace/posh_act_2013.pdf",
+      "checksum_sha256": "e59776d9ce4300c35acb8f3ed8150b33c18a77b5b553423ef9f1c69dbd144475",
+      "downloaded_at": "2026-08-17T07:09:54.937761+00:00",
+      "last_verified_at": "2026-08-17T07:09:54.937761+00:00",
+      "size_bytes": 236208
+    },
+    "domestic_violence_act_2005": {
+      "source_id": "domestic_violence_act_2005",
+      "title": "The Protection of Women from Domestic Violence Act, 2005",
+      "authority": "India Code",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15436/1/protection_of_women_from_domestic_violence_act%2C_2005.pdf",
+      "local_path": "knowledge_base/raw/womens_safety/domestic/domestic_violence_act_2005.pdf",
+      "checksum_sha256": "65eba6c2b14f1ba09d48ec8d22c48189959678c2eb7622f92d079126c1724e38",
+      "downloaded_at": "2026-08-17T07:09:55.674866+00:00",
+      "last_verified_at": "2026-08-17T07:09:55.674866+00:00",
+      "size_bytes": 544801
+    },
+    "rte_act_2009": {
+      "source_id": "rte_act_2009",
+      "title": "The Right of Children to Free and Compulsory Education Act, 2009",
+      "authority": "India Code",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19014/1/the_right_of_children_to_free_and_compulsory_education_act_2009.pdf",
+      "local_path": "knowledge_base/raw/educational_rights/rte_act_2009.pdf",
+      "checksum_sha256": "cc87f6d2223693f693c1394101272eb5e85eea77e61c789bdc21b2c749a1a70e",
+      "downloaded_at": "2026-08-17T07:09:56.370491+00:00",
+      "last_verified_at": "2026-08-17T07:09:56.370491+00:00",
+      "size_bytes": 200020
+    },
+    "ugc_anti_ragging_regulations_2009": {
+      "source_id": "ugc_anti_ragging_regulations_2009",
+      "title": "UGC Regulations on Curbing the Menace of Ragging in Higher Educational Institutions, 2009",
+      "authority": "University Grants Commission",
+      "source_url": "https://www.ugc.gov.in/pdfnews/5868191_Regulations-on-Curbing-the-menace-of-ragging-in-higher-educational-institutions.pdf",
+      "local_path": "knowledge_base/raw/anti_ragging/ugc_anti_ragging_regulations_2009.pdf",
+      "checksum_sha256": "9a33ff63998dff1c463cab5a12acedf4e8c81f0719529fe491907ff6128239fc",
+      "downloaded_at": "2026-08-17T08:02:42.936213+00:00",
+      "last_verified_at": "2026-08-17T08:02:42.936213+00:00",
+      "size_bytes": 47095
+    },
+    "ugc_anti_ragging_summary_2009": {
+      "source_id": "ugc_anti_ragging_summary_2009",
+      "title": "Summary of UGC Regulations on Curbing the Menace of Ragging in Higher Educational Institutions, 2009",
+      "authority": "National Anti-Ragging Programme / UGC",
+      "source_url": "https://antiragging.in/assets/pdf/information/english/SUMMARY_OF_UGC_REGULATIONS.pdf",
+      "local_path": "knowledge_base/raw/anti_ragging/ugc_anti_ragging_summary_2009.pdf",
+      "checksum_sha256": "280eece672cb68a26fd0722a42bee73fb38ca92ef7845a53a43998acaa93c568",
+      "downloaded_at": "2026-08-17T08:08:37.250739+00:00",
+      "last_verified_at": "2026-08-17T08:08:37.250739+00:00",
+      "size_bytes": 54593
+    },
+    "ugc_anti_ragging_second_amendment_2013": {
+      "source_id": "ugc_anti_ragging_second_amendment_2013",
+      "title": "UGC Curbing the Menace of Ragging in Higher Educational Institutions (Second Amendment) Regulations, 2013",
+      "authority": "University Grants Commission",
+      "source_url": "https://www.ugc.gov.in/pdfnews/8091137_gazette-antiragging-Second-Amendment.pdf",
+      "local_path": "knowledge_base/raw/anti_ragging/ugc_anti_ragging_second_amendment_2013.pdf",
+      "checksum_sha256": "68a156d223448b8bf2decc23b557e26e2faea091a5165ca3363c0b3aebd8417e",
+      "downloaded_at": "2026-08-17T08:08:38.376536+00:00",
+      "last_verified_at": "2026-08-17T08:08:38.376536+00:00",
+      "size_bytes": 656072
+    },
+    "ugc_anti_ragging_third_amendment_2016": {
+      "source_id": "ugc_anti_ragging_third_amendment_2016",
+      "title": "UGC Curbing the Menace of Ragging in Higher Educational Institutions (Third Amendment) Regulations, 2016",
+      "authority": "National Anti-Ragging Programme / UGC",
+      "source_url": "https://antiragging.in/assets/pdf/annexure/Annexure-I-3rd.pdf",
+      "local_path": "knowledge_base/raw/anti_ragging/ugc_anti_ragging_third_amendment_2016.pdf",
+      "checksum_sha256": "231dc65fc17a4298d77a62f508ba4fdd257d77dd9aa0ae645cc2e6c71e7226d8",
+      "downloaded_at": "2026-08-17T08:08:40.162860+00:00",
+      "last_verified_at": "2026-08-17T08:08:40.162860+00:00",
+      "size_bytes": 64293
+    }
+  }
+}

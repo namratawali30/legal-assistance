@@ -1,0 +1,1054 @@
+{
+  "summary": {
+    "supported_count": 14,
+    "unsupported_count": 6,
+    "supported_top_score_min": 0.4965,
+    "supported_top_score_max": 0.7452,
+    "supported_top_score_average": 0.6601,
+    "unsupported_top_score_min": 0.2448,
+    "unsupported_top_score_max": 0.5064,
+    "unsupported_top_score_average": 0.3958
+  },
+  "results": [
+    {
+      "id": "consumer_01",
+      "question": "How can a consumer file a complaint against a seller?",
+      "category": "consumer_rights",
+      "supported": true,
+      "expected_source": "consumer_protection_act_2019",
+      "expected_source_found": true,
+      "top_score": 0.6309,
+      "second_score": 0.627,
+      "average_top5_score": 0.599,
+      "top_margin": 0.004,
+      "top_source": "consumer_protection_act_2019",
+      "top_provision": "38",
+      "top_provision_title": "Procedure on admission of complaint.—(1) The District Commission shall, on admission of a",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.6309,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "38",
+          "provision_title": "Procedure on admission of complaint.—(1) The District Commission shall, on admission of a"
+        },
+        {
+          "rank": 2,
+          "score": 0.627,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "81",
+          "provision_title": "Recording settlement and passing of order.—(1) The District Commission or the State"
+        },
+        {
+          "rank": 3,
+          "score": 0.5837,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "35",
+          "provision_title": "Manner in which complaint shall be made.—(1) A complaint, in relation to any goods sold or"
+        },
+        {
+          "rank": 4,
+          "score": 0.5784,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "47",
+          "provision_title": "Jurisdiction of State Commission.—(1) Subject to the other provisions of this Act, the State"
+        },
+        {
+          "rank": 5,
+          "score": 0.5752,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "17",
+          "provision_title": "Complaints to authorities.—A complaint relating to violation of consumer rights or unfair trade"
+        }
+      ]
+    },
+    {
+      "id": "consumer_02",
+      "question": "What happens after a consumer complaint is admitted?",
+      "category": "consumer_rights",
+      "supported": true,
+      "expected_source": "consumer_protection_act_2019",
+      "expected_source_found": true,
+      "top_score": 0.7324,
+      "second_score": 0.6746,
+      "average_top5_score": 0.6626,
+      "top_margin": 0.0578,
+      "top_source": "consumer_protection_act_2019",
+      "top_provision": "38",
+      "top_provision_title": "Procedure on admission of complaint.—(1) The District Commission shall, on admission of a",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.7324,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "38",
+          "provision_title": "Procedure on admission of complaint.—(1) The District Commission shall, on admission of a"
+        },
+        {
+          "rank": 2,
+          "score": 0.6746,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "36",
+          "provision_title": "Proceedings before District Commission.—(1) Every proceeding before the District"
+        },
+        {
+          "rank": 3,
+          "score": 0.6588,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "81",
+          "provision_title": "Recording settlement and passing of order.—(1) The District Commission or the State"
+        },
+        {
+          "rank": 4,
+          "score": 0.6251,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "69",
+          "provision_title": "Limitation period.—(1) The District Commission, the State Commission or the National"
+        },
+        {
+          "rank": 5,
+          "score": 0.6221,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "38",
+          "provision_title": "Procedure on admission of complaint.—(1) The District Commission shall, on admission of a"
+        }
+      ]
+    },
+    {
+      "id": "consumer_03",
+      "question": "Where can I complain about defective goods?",
+      "category": "consumer_rights",
+      "supported": true,
+      "expected_source": "consumer_protection_act_2019",
+      "expected_source_found": true,
+      "top_score": 0.4965,
+      "second_score": 0.4805,
+      "average_top5_score": 0.4658,
+      "top_margin": 0.016,
+      "top_source": "consumer_protection_act_2019",
+      "top_provision": "39",
+      "top_provision_title": "Findings of District Commission.—(1) Where the District Commission is satisfied that the",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.4965,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "39",
+          "provision_title": "Findings of District Commission.—(1) Where the District Commission is satisfied that the"
+        },
+        {
+          "rank": 2,
+          "score": 0.4805,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "84",
+          "provision_title": "Liability of product manufacturer.—(1) A product manufacturer shall be liable in a product"
+        },
+        {
+          "rank": 3,
+          "score": 0.469,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "1",
+          "provision_title": "24th July, 2020.-- S. 2 [clauses (4), (13), (14), (16), (40)], s. 10 to 27 (both inclusive), sub-clause (iv) of clause (a) of"
+        },
+        {
+          "rank": 4,
+          "score": 0.4425,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "81",
+          "provision_title": "Recording settlement and passing of order.—(1) The District Commission or the State"
+        },
+        {
+          "rank": 5,
+          "score": 0.4408,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "83",
+          "provision_title": "Product liability action.—A product liability action may be brought by a complainant against a"
+        }
+      ]
+    },
+    {
+      "id": "labour_01",
+      "question": "Can an employer pay a worker less than the minimum wage?",
+      "category": "labour_rights",
+      "supported": true,
+      "expected_source": "code_on_wages_2019",
+      "expected_source_found": true,
+      "top_score": 0.5767,
+      "second_score": 0.536,
+      "average_top5_score": 0.5329,
+      "top_margin": 0.0407,
+      "top_source": "code_on_wages_2019",
+      "top_provision": "12",
+      "top_provision_title": "Minimum time rate wages for piece work.—Where a person is employed on piece work for",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.5767,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "12",
+          "provision_title": "Minimum time rate wages for piece work.—Where a person is employed on piece work for"
+        },
+        {
+          "rank": 2,
+          "score": 0.536,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "11",
+          "provision_title": "Wages for two or more classes of work.—Where an employee does two or more classes of work"
+        },
+        {
+          "rank": 3,
+          "score": 0.5256,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "14",
+          "provision_title": "Wages for overtime work.—Where an employee whose minimum rate of wages has been fixed"
+        },
+        {
+          "rank": 4,
+          "score": 0.5251,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "10",
+          "provision_title": "Wages of employee who works for less than normal working day.—If an employee whose"
+        },
+        {
+          "rank": 5,
+          "score": 0.501,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "9",
+          "provision_title": "Power of Central Government to fix floor wage.—(1) The Central Government shall fix floor"
+        }
+      ]
+    },
+    {
+      "id": "labour_02",
+      "question": "What does Indian law say about minimum wages for employees?",
+      "category": "labour_rights",
+      "supported": true,
+      "expected_source": "code_on_wages_2019",
+      "expected_source_found": true,
+      "top_score": 0.6521,
+      "second_score": 0.6333,
+      "average_top5_score": 0.6156,
+      "top_margin": 0.0188,
+      "top_source": "code_on_wages_2019",
+      "top_provision": "4",
+      "top_provision_title": "The salient features of the Code on Wages, 2019, inter alia, are as follows:—",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.6521,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "4",
+          "provision_title": "The salient features of the Code on Wages, 2019, inter alia, are as follows:—"
+        },
+        {
+          "rank": 2,
+          "score": 0.6333,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "67",
+          "provision_title": "Power of appropriate Government to make rules.—(1) The appropriate Government may,"
+        },
+        {
+          "rank": 3,
+          "score": 0.5993,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "10",
+          "provision_title": "Wages of employee who works for less than normal working day.—If an employee whose"
+        },
+        {
+          "rank": 4,
+          "score": 0.5975,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "2",
+          "provision_title": "In pursuance of the recommendations of the said Commission and the deliberations made in the"
+        },
+        {
+          "rank": 5,
+          "score": 0.5959,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "11",
+          "provision_title": "Wages for two or more classes of work.—Where an employee does two or more classes of work"
+        }
+      ]
+    },
+    {
+      "id": "labour_03",
+      "question": "Can wages be deducted from an employee?",
+      "category": "labour_rights",
+      "supported": true,
+      "expected_source": "code_on_wages_2019",
+      "expected_source_found": true,
+      "top_score": 0.6678,
+      "second_score": 0.5843,
+      "average_top5_score": 0.5846,
+      "top_margin": 0.0835,
+      "top_source": "code_on_wages_2019",
+      "top_provision": "18",
+      "top_provision_title": "Deductions which may be made from wages.—(1) Notwithstanding anything contained in any",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.6678,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "18",
+          "provision_title": "Deductions which may be made from wages.—(1) Notwithstanding anything contained in any"
+        },
+        {
+          "rank": 2,
+          "score": 0.5843,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "18",
+          "provision_title": "Deductions which may be made from wages.—(1) Notwithstanding anything contained in any"
+        },
+        {
+          "rank": 3,
+          "score": 0.5836,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "34",
+          "provision_title": "Sums deductible from gross profits.—The following sums shall be deducted from the gross"
+        },
+        {
+          "rank": 4,
+          "score": 0.5482,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "22",
+          "provision_title": "Deductions for services rendered.—A deduction under clause (d) or clause (e) of sub-section (2)"
+        },
+        {
+          "rank": 5,
+          "score": 0.5392,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "15",
+          "provision_title": "Mode of payment of wages.—All wages shall be paid in current coin or currency notes or by"
+        }
+      ]
+    },
+    {
+      "id": "workplace_01",
+      "question": "What can a woman do if she faces sexual harassment at her workplace?",
+      "category": "womens_safety",
+      "supported": true,
+      "expected_source": "posh_act_2013",
+      "expected_source_found": true,
+      "top_score": 0.6307,
+      "second_score": 0.6128,
+      "average_top5_score": 0.5886,
+      "top_margin": 0.0179,
+      "top_source": "posh_act_2013",
+      "top_provision": "3",
+      "top_provision_title": "Prevention of sexual harassment.—(1) No woman shall be subjected to sexual harassment at any",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.6307,
+          "source_id": "posh_act_2013",
+          "provision_number": "3",
+          "provision_title": "Prevention of sexual harassment.—(1) No woman shall be subjected to sexual harassment at any"
+        },
+        {
+          "rank": 2,
+          "score": 0.6128,
+          "source_id": "posh_act_2013",
+          "provision_number": "14",
+          "provision_title": "Punishment for false or malicious complaint and false evidence.—(1) Where the Internal"
+        },
+        {
+          "rank": 3,
+          "score": 0.5731,
+          "source_id": "posh_act_2013",
+          "provision_number": "20",
+          "provision_title": "Duties and powers of District Officer.—The District Officer shall, —"
+        },
+        {
+          "rank": 4,
+          "score": 0.5668,
+          "source_id": "posh_act_2013",
+          "provision_number": "4",
+          "provision_title": "Constitution of Internal Complaints Committee.— (1) Every employer of a workplace shall, by"
+        },
+        {
+          "rank": 5,
+          "score": 0.5595,
+          "source_id": "posh_act_2013",
+          "provision_number": "24",
+          "provision_title": "Appropriate Government to take measures to publicise the Act.—The appropriate"
+        }
+      ]
+    },
+    {
+      "id": "workplace_02",
+      "question": "How can an employee complain about workplace sexual harassment?",
+      "category": "womens_safety",
+      "supported": true,
+      "expected_source": "posh_act_2013",
+      "expected_source_found": true,
+      "top_score": 0.6538,
+      "second_score": 0.6376,
+      "average_top5_score": 0.6203,
+      "top_margin": 0.0162,
+      "top_source": "posh_act_2013",
+      "top_provision": "4",
+      "top_provision_title": "Constitution of Internal Complaints Committee.— (1) Every employer of a workplace shall, by",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.6538,
+          "source_id": "posh_act_2013",
+          "provision_number": "4",
+          "provision_title": "Constitution of Internal Complaints Committee.— (1) Every employer of a workplace shall, by"
+        },
+        {
+          "rank": 2,
+          "score": 0.6376,
+          "source_id": "posh_act_2013",
+          "provision_number": "14",
+          "provision_title": "Punishment for false or malicious complaint and false evidence.—(1) Where the Internal"
+        },
+        {
+          "rank": 3,
+          "score": 0.6259,
+          "source_id": "posh_act_2013",
+          "provision_number": "3",
+          "provision_title": "Prevention of sexual harassment.—(1) No woman shall be subjected to sexual harassment at any"
+        },
+        {
+          "rank": 4,
+          "score": 0.5929,
+          "source_id": "posh_act_2013",
+          "provision_number": "16",
+          "provision_title": "Prohibition of publication or making known contents of complaint and inquiry"
+        },
+        {
+          "rank": 5,
+          "score": 0.5913,
+          "source_id": "posh_act_2013",
+          "provision_number": "17",
+          "provision_title": "Penalty for publication or making known contents of complaint and inquiry proceedings.—"
+        }
+      ]
+    },
+    {
+      "id": "domestic_01",
+      "question": "What protection can a woman seek against domestic violence?",
+      "category": "womens_safety",
+      "supported": true,
+      "expected_source": "domestic_violence_act_2005",
+      "expected_source_found": true,
+      "top_score": 0.6708,
+      "second_score": 0.6615,
+      "average_top5_score": 0.6427,
+      "top_margin": 0.0093,
+      "top_source": "domestic_violence_act_2005",
+      "top_provision": "3",
+      "top_provision_title": "Definition of domestic violence.—For the purposes of this Act, any act, omission or commission",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.6708,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "3",
+          "provision_title": "Definition of domestic violence.—For the purposes of this Act, any act, omission or commission"
+        },
+        {
+          "rank": 2,
+          "score": 0.6615,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "3",
+          "provision_title": "Definition of domestic violence.—For the purposes of this Act, any act, omission or commission"
+        },
+        {
+          "rank": 3,
+          "score": 0.6488,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "35",
+          "provision_title": "Protection of action taken in good faith.—No suit, prosecution or other legal proceeding shall"
+        },
+        {
+          "rank": 4,
+          "score": 0.6173,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "4",
+          "provision_title": "Information to Protection Officer and exclusion of liability of informant.—(1) Any person"
+        },
+        {
+          "rank": 5,
+          "score": 0.6149,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "14",
+          "provision_title": "Counselling.—(1) The Magistrate may, at any stage of the proceedings under this Act, direct the"
+        }
+      ]
+    },
+    {
+      "id": "domestic_02",
+      "question": "Can a woman obtain a protection order against domestic abuse?",
+      "category": "womens_safety",
+      "supported": true,
+      "expected_source": "domestic_violence_act_2005",
+      "expected_source_found": true,
+      "top_score": 0.6453,
+      "second_score": 0.645,
+      "average_top5_score": 0.6395,
+      "top_margin": 0.0002,
+      "top_source": "domestic_violence_act_2005",
+      "top_provision": "23",
+      "top_provision_title": "Power to grant interim and ex parte orders.—(1) In any proceeding before him under this Act,",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.6453,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "23",
+          "provision_title": "Power to grant interim and ex parte orders.—(1) In any proceeding before him under this Act,"
+        },
+        {
+          "rank": 2,
+          "score": 0.645,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "22",
+          "provision_title": "Compensation orders.—In addition to other reliefs as may be granted under this Act, the"
+        },
+        {
+          "rank": 3,
+          "score": 0.6398,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "10",
+          "provision_title": "Service providers.—(1) Subject to such rules as may be made in this behalf, any voluntary"
+        },
+        {
+          "rank": 4,
+          "score": 0.6339,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "19",
+          "provision_title": "Residence orders.—(1) While disposing of an application under sub-section (1) of section12, the"
+        },
+        {
+          "rank": 5,
+          "score": 0.6338,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "5",
+          "provision_title": "Duties of police officers, service providers and Magistrate.—A police officer, Protection"
+        }
+      ]
+    },
+    {
+      "id": "education_01",
+      "question": "Does a child have a right to free and compulsory education?",
+      "category": "educational_rights",
+      "supported": true,
+      "expected_source": "rte_act_2009",
+      "expected_source_found": true,
+      "top_score": 0.7452,
+      "second_score": 0.7026,
+      "average_top5_score": 0.7083,
+      "top_margin": 0.0426,
+      "top_source": "rte_act_2009",
+      "top_provision": "8",
+      "top_provision_title": "Duties of appropriate Government.—The appropriate Government shall—",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.7452,
+          "source_id": "rte_act_2009",
+          "provision_number": "8",
+          "provision_title": "Duties of appropriate Government.—The appropriate Government shall—"
+        },
+        {
+          "rank": 2,
+          "score": 0.7026,
+          "source_id": "rte_act_2009",
+          "provision_number": "16",
+          "provision_title": "Prohibition of holding back and expulsion.—No child admitted in a school shall be held back in"
+        },
+        {
+          "rank": 3,
+          "score": 0.7016,
+          "source_id": "rte_act_2009",
+          "provision_number": "10",
+          "provision_title": "Duty of parents and guardian.—It shall be the duty of every parent or guardian to admit or"
+        },
+        {
+          "rank": 4,
+          "score": 0.7012,
+          "source_id": "rte_act_2009",
+          "provision_number": "11",
+          "provision_title": "Appropriate Government to provide for pre-school education.—With a view to prepare"
+        },
+        {
+          "rank": 5,
+          "score": 0.6907,
+          "source_id": "rte_act_2009",
+          "provision_number": "15",
+          "provision_title": "No denial of admission.—A child shall be admitted in a school at the commencement of the"
+        }
+      ]
+    },
+    {
+      "id": "education_02",
+      "question": "What are the rights of a child under the Right to Education Act?",
+      "category": "educational_rights",
+      "supported": true,
+      "expected_source": "rte_act_2009",
+      "expected_source_found": true,
+      "top_score": 0.7256,
+      "second_score": 0.6867,
+      "average_top5_score": 0.6894,
+      "top_margin": 0.0389,
+      "top_source": "rte_act_2009",
+      "top_provision": "37",
+      "top_provision_title": "Protection of action taken in good faith.—No suit or other legal proceeding shall lie against the",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.7256,
+          "source_id": "rte_act_2009",
+          "provision_number": "37",
+          "provision_title": "Protection of action taken in good faith.—No suit or other legal proceeding shall lie against the"
+        },
+        {
+          "rank": 2,
+          "score": 0.6867,
+          "source_id": "rte_act_2009",
+          "provision_number": "10",
+          "provision_title": "Duty of parents and guardian.—It shall be the duty of every parent or guardian to admit or"
+        },
+        {
+          "rank": 3,
+          "score": 0.6847,
+          "source_id": "rte_act_2009",
+          "provision_number": "16",
+          "provision_title": "Prohibition of holding back and expulsion.—No child admitted in a school shall be held back in"
+        },
+        {
+          "rank": 4,
+          "score": 0.6794,
+          "source_id": "rte_act_2009",
+          "provision_number": "28",
+          "provision_title": "Prohibition of private tuition by teacher.—No teacher shall engage himself or herself in private"
+        },
+        {
+          "rank": 5,
+          "score": 0.6704,
+          "source_id": "rte_act_2009",
+          "provision_number": "31",
+          "provision_title": "Monitoring of child's right to education.—(1) The National Commission for Protection of Child"
+        }
+      ]
+    },
+    {
+      "id": "ragging_01",
+      "question": "What actions are considered ragging in a college?",
+      "category": "anti_ragging",
+      "supported": true,
+      "expected_source": "ugc_anti_ragging_summary_2009",
+      "expected_source_found": true,
+      "top_score": 0.7181,
+      "second_score": 0.6857,
+      "average_top5_score": 0.6669,
+      "top_margin": 0.0324,
+      "top_source": "ugc_anti_ragging_summary_2009",
+      "top_provision": "3",
+      "top_provision_title": "What Constitutes Ragging",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.7181,
+          "source_id": "ugc_anti_ragging_summary_2009",
+          "provision_number": "3",
+          "provision_title": "What Constitutes Ragging"
+        },
+        {
+          "rank": 2,
+          "score": 0.6857,
+          "source_id": "ugc_anti_ragging_summary_2009",
+          "provision_number": "4",
+          "provision_title": "Measures For Prohibition Of Ragging"
+        },
+        {
+          "rank": 3,
+          "score": 0.6682,
+          "source_id": "ugc_anti_ragging_summary_2009",
+          "provision_number": "5",
+          "provision_title": "Adiministrative Action In The Event Of Ragging"
+        },
+        {
+          "rank": 4,
+          "score": 0.6349,
+          "source_id": "ugc_anti_ragging_summary_2009",
+          "provision_number": "2",
+          "provision_title": "Objective"
+        },
+        {
+          "rank": 5,
+          "score": 0.6279,
+          "source_id": "ugc_anti_ragging_summary_2009",
+          "provision_number": "5",
+          "provision_title": "Adiministrative Action In The Event Of Ragging"
+        }
+      ]
+    },
+    {
+      "id": "ragging_02",
+      "question": "Does bullying and exclusion of another student count as ragging?",
+      "category": "anti_ragging",
+      "supported": true,
+      "expected_source": "ugc_anti_ragging_third_amendment_2016",
+      "expected_source_found": true,
+      "top_score": 0.6952,
+      "second_score": 0.592,
+      "average_top5_score": 0.6028,
+      "top_margin": 0.1033,
+      "top_source": "ugc_anti_ragging_summary_2009",
+      "top_provision": "3",
+      "top_provision_title": "What Constitutes Ragging",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.6952,
+          "source_id": "ugc_anti_ragging_summary_2009",
+          "provision_number": "3",
+          "provision_title": "What Constitutes Ragging"
+        },
+        {
+          "rank": 2,
+          "score": 0.592,
+          "source_id": "ugc_anti_ragging_summary_2009",
+          "provision_number": "4",
+          "provision_title": "Measures For Prohibition Of Ragging"
+        },
+        {
+          "rank": 3,
+          "score": 0.5887,
+          "source_id": "ugc_anti_ragging_summary_2009",
+          "provision_number": "5",
+          "provision_title": "Adiministrative Action In The Event Of Ragging"
+        },
+        {
+          "rank": 4,
+          "score": 0.5776,
+          "source_id": "ugc_anti_ragging_third_amendment_2016",
+          "provision_number": "3(j)",
+          "provision_title": "Amendment provision"
+        },
+        {
+          "rank": 5,
+          "score": 0.5606,
+          "source_id": "ugc_anti_ragging_summary_2009",
+          "provision_number": "2",
+          "provision_title": "Objective"
+        }
+      ]
+    },
+    {
+      "id": "unsupported_01",
+      "question": "What is the punishment for cryptocurrency tax fraud in India?",
+      "category": null,
+      "supported": false,
+      "expected_source": null,
+      "expected_source_found": false,
+      "top_score": 0.4989,
+      "second_score": 0.4981,
+      "average_top5_score": 0.4908,
+      "top_margin": 0.0008,
+      "top_source": "code_on_wages_2019",
+      "top_provision": "54",
+      "top_provision_title": "Penalties for offences.—(1) Any employer who—",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.4989,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "54",
+          "provision_title": "Penalties for offences.—(1) Any employer who—"
+        },
+        {
+          "rank": 2,
+          "score": 0.4981,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "90",
+          "provision_title": "Punishment for manufacturing for sale or storing, selling or distributing or importing"
+        },
+        {
+          "rank": 3,
+          "score": 0.4962,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "91",
+          "provision_title": "Punishment for manufacturing for sale or for storing or selling or distributing or importing"
+        },
+        {
+          "rank": 4,
+          "score": 0.4907,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "72",
+          "provision_title": "Penalty for non-compliance of order.—(1) Whoever fails to comply with any order made by the"
+        },
+        {
+          "rank": 5,
+          "score": 0.4699,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "47",
+          "provision_title": "Jurisdiction of State Commission.—(1) Subject to the other provisions of this Act, the State"
+        }
+      ]
+    },
+    {
+      "id": "unsupported_02",
+      "question": "How do I register a patent for a new invention?",
+      "category": null,
+      "supported": false,
+      "expected_source": null,
+      "expected_source_found": false,
+      "top_score": 0.2448,
+      "second_score": 0.2328,
+      "average_top5_score": 0.2312,
+      "top_margin": 0.012,
+      "top_source": "consumer_protection_act_2019",
+      "top_provision": "82",
+      "top_provision_title": "Application of Chapter.—This Chapter shall apply to every claim for compensation under a",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.2448,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "82",
+          "provision_title": "Application of Chapter.—This Chapter shall apply to every claim for compensation under a"
+        },
+        {
+          "rank": 2,
+          "score": 0.2328,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "48",
+          "provision_title": "Transfer of cases.—On the application of the complainant or of its own motion, the State"
+        },
+        {
+          "rank": 3,
+          "score": 0.2298,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "62",
+          "provision_title": "Transfer of cases.—On the application of the complainant or of its own motion, the National"
+        },
+        {
+          "rank": 4,
+          "score": 0.2264,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "83",
+          "provision_title": "Product liability action.—A product liability action may be brought by a complainant against a"
+        },
+        {
+          "rank": 5,
+          "score": 0.2224,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "1",
+          "provision_title": "24th July, 2020.-- S. 2 [clauses (4), (13), (14), (16), (40)], s. 10 to 27 (both inclusive), sub-clause (iv) of clause (a) of"
+        }
+      ]
+    },
+    {
+      "id": "unsupported_03",
+      "question": "What are the inheritance rights of a Hindu son?",
+      "category": null,
+      "supported": false,
+      "expected_source": null,
+      "expected_source_found": false,
+      "top_score": 0.387,
+      "second_score": 0.3859,
+      "average_top5_score": 0.3812,
+      "top_margin": 0.0011,
+      "top_source": "rte_act_2009",
+      "top_provision": "10",
+      "top_provision_title": "Duty of parents and guardian.—It shall be the duty of every parent or guardian to admit or",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.387,
+          "source_id": "rte_act_2009",
+          "provision_number": "10",
+          "provision_title": "Duty of parents and guardian.—It shall be the duty of every parent or guardian to admit or"
+        },
+        {
+          "rank": 2,
+          "score": 0.3859,
+          "source_id": "rte_act_2009",
+          "provision_number": "31",
+          "provision_title": "Monitoring of child's right to education.—(1) The National Commission for Protection of Child"
+        },
+        {
+          "rank": 3,
+          "score": 0.3832,
+          "source_id": "rte_act_2009",
+          "provision_number": "39",
+          "provision_title": "Power of Central Government to remove difficulties."
+        },
+        {
+          "rank": 4,
+          "score": 0.3802,
+          "source_id": "rte_act_2009",
+          "provision_number": "30",
+          "provision_title": "Examination and completion certificate.—(1) No child shall be required to pass any Board"
+        },
+        {
+          "rank": 5,
+          "score": 0.3694,
+          "source_id": "rte_act_2009",
+          "provision_number": "38",
+          "provision_title": "Power of appropriate Government to make rules.—(1) The appropriate Government may, by"
+        }
+      ]
+    },
+    {
+      "id": "unsupported_04",
+      "question": "How can I get bail after being arrested for theft?",
+      "category": null,
+      "supported": false,
+      "expected_source": null,
+      "expected_source_found": false,
+      "top_score": 0.2829,
+      "second_score": 0.2787,
+      "average_top5_score": 0.267,
+      "top_margin": 0.0043,
+      "top_source": "domestic_violence_act_2005",
+      "top_provision": "24",
+      "top_provision_title": "Court to give copies of order free of cost.—The Magistrate shall, in all cases where he has",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.2829,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "24",
+          "provision_title": "Court to give copies of order free of cost.—The Magistrate shall, in all cases where he has"
+        },
+        {
+          "rank": 2,
+          "score": 0.2787,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "31",
+          "provision_title": "Penalty for breach of protection order by respondent.—(1) A breach of protection order, or of"
+        },
+        {
+          "rank": 3,
+          "score": 0.2675,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "32",
+          "provision_title": "Cognizance and proof.—(1) Notwithstanding anything contained in the Code of Criminal"
+        },
+        {
+          "rank": 4,
+          "score": 0.2566,
+          "source_id": "domestic_violence_act_2005",
+          "provision_number": "5",
+          "provision_title": "Duties of police officers, service providers and Magistrate.—A police officer, Protection"
+        },
+        {
+          "rank": 5,
+          "score": 0.2491,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "22",
+          "provision_title": "Search and seizure.—(1) For the purpose of conducting an investigation after preliminary"
+        }
+      ]
+    },
+    {
+      "id": "unsupported_05",
+      "question": "What are the income tax rates for salaried employees?",
+      "category": null,
+      "supported": false,
+      "expected_source": null,
+      "expected_source_found": false,
+      "top_score": 0.5064,
+      "second_score": 0.469,
+      "average_top5_score": 0.4438,
+      "top_margin": 0.0374,
+      "top_source": "code_on_wages_2019",
+      "top_provision": "35",
+      "top_provision_title": "Calculation of direct tax payable by employer.—For the purposes of this Code, any direct tax",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.5064,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "35",
+          "provision_title": "Calculation of direct tax payable by employer.—For the purposes of this Code, any direct tax"
+        },
+        {
+          "rank": 2,
+          "score": 0.469,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "34",
+          "provision_title": "Sums deductible from gross profits.—The following sums shall be deducted from the gross"
+        },
+        {
+          "rank": 3,
+          "score": 0.4356,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "26",
+          "provision_title": "Eligibility for bonus, etc.—(1) There shall be paid to every employee, drawing wages not"
+        },
+        {
+          "rank": 4,
+          "score": 0.4045,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "18",
+          "provision_title": "Deductions which may be made from wages.—(1) Notwithstanding anything contained in any"
+        },
+        {
+          "rank": 5,
+          "score": 0.4032,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "40",
+          "provision_title": "Application of this Chapter to establishments in public sector in certain cases.—(1) If in any"
+        }
+      ]
+    },
+    {
+      "id": "unsupported_06",
+      "question": "What documents are required to register a company in India?",
+      "category": null,
+      "supported": false,
+      "expected_source": null,
+      "expected_source_found": false,
+      "top_score": 0.4548,
+      "second_score": 0.4409,
+      "average_top5_score": 0.4072,
+      "top_margin": 0.0139,
+      "top_source": "consumer_protection_act_2019",
+      "top_provision": "26",
+      "top_provision_title": "Accounts and audit.—(1) The Central Authority shall maintain proper accounts and other",
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.4548,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "26",
+          "provision_title": "Accounts and audit.—(1) The Central Authority shall maintain proper accounts and other"
+        },
+        {
+          "rank": 2,
+          "score": 0.4409,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "41",
+          "provision_title": "Non-applicability of this Chapter.—(1) Nothing in this Chapter shall apply to—"
+        },
+        {
+          "rank": 3,
+          "score": 0.4077,
+          "source_id": "code_on_wages_2019",
+          "provision_number": "47",
+          "provision_title": "Presumption about accuracy of balance sheet and profit and loss account of corporations"
+        },
+        {
+          "rank": 4,
+          "score": 0.3688,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "11",
+          "provision_title": "Qualifications, method of recruitment, etc., of Chief Commissioner and Commissioners.—"
+        },
+        {
+          "rank": 5,
+          "score": 0.3637,
+          "source_id": "consumer_protection_act_2019",
+          "provision_number": "43",
+          "provision_title": "Qualifications, etc., of President and members of State Commission.—The Central"
+        }
+      ]
+    }
+  ]
+}
