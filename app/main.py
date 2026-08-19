@@ -13,6 +13,9 @@ from app.database import (
 from app.api.complaint import (
     router as complaint_router,
 )
+from app.api.complaint_export import(
+    router as complaint_export_router,
+)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -44,7 +47,7 @@ app = FastAPI(
 app.include_router(auth_router)
 app.include_router(chat_router)
 app.include_router(complaint_router)
-
+app.include_router(complaint_export_router)
 # @app.get("/")
 # async def root():
 #     return {
