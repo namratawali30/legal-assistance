@@ -9,9 +9,9 @@ from app.db.collections import (
     MESSAGES_COLLECTION,
 )
 
-
 chat_sessions_collection = database[CHAT_SESSIONS_COLLECTION]
 messages_collection = database[MESSAGES_COLLECTION]
+
 
 def to_object_id(value):
     if isinstance(value, ObjectId):
@@ -21,13 +21,16 @@ def to_object_id(value):
         return ObjectId(str(value))
     except (InvalidId, TypeError, ValueError):
         return None
-    
+
+
 async def create_chat_session(
     session_data: dict[str, Any],
 ):
-    result = await chat_sessions_collection.insert_one(
-        session_data
-    )
+    # PyMongo may add _id to the supplied document.
+    # Never let the repository mutate caller-owned state.
+    document = dict(session_data)
+
+    result = await chat_sessions_collection.insert_one(document)
 
     return result.inserted_id
 
@@ -36,9 +39,7 @@ async def get_chat_session(
     session_id,
     user_id,
 ):
-    object_id = to_object_id(
-        session_id
-    )
+    object_id = to_object_id(session_id)
 
     if object_id is None:
         return None
@@ -63,9 +64,7 @@ async def get_user_chat_sessions(
         -1,
     )
 
-    return await cursor.to_list(
-        length=100
-    )
+    return await cursor.to_list(length=100)
 
 
 async def update_chat_session(
@@ -73,17 +72,34 @@ async def update_chat_session(
     user_id,
     update_data: dict[str, Any],
 ) -> dict[str, Any] | None:
-    update_data["updated_at"] = datetime.now(
-        timezone.utc
-    )
+    object_id = to_object_id(session_id)
+
+    if object_id is None:
+        return None
+
+    safe_update_data = dict(update_data)
+
+    # Repository-managed identity/history fields
+    # cannot be rewritten by a caller.
+    for field_name in (
+        "_id",
+        "user_id",
+        "created_at",
+    ):
+        safe_update_data.pop(
+            field_name,
+            None,
+        )
+
+    safe_update_data["updated_at"] = datetime.now(timezone.utc)
 
     result = await chat_sessions_collection.update_one(
         {
-            "_id": session_id,
+            "_id": object_id,
             "user_id": user_id,
         },
         {
-            "$set": update_data,
+            "$set": safe_update_data,
         },
     )
 
@@ -91,7 +107,7 @@ async def update_chat_session(
         return None
 
     return await get_chat_session(
-        session_id=session_id,
+        session_id=object_id,
         user_id=user_id,
     )
 
@@ -100,9 +116,14 @@ async def delete_chat_session(
     session_id,
     user_id,
 ) -> bool:
+    object_id = to_object_id(session_id)
+
+    if object_id is None:
+        return False
+
     result = await chat_sessions_collection.delete_one(
         {
-            "_id": session_id,
+            "_id": object_id,
             "user_id": user_id,
         }
     )
@@ -113,50 +134,75 @@ async def delete_chat_session(
 async def create_message(
     message_data: dict[str, Any],
 ):
-    result = await messages_collection.insert_one(
-        message_data
-    )
+    # Avoid PyMongo adding _id to caller-owned state.
+    document = dict(message_data)
+
+    result = await messages_collection.insert_one(document)
 
     return result.inserted_id
 
 
 async def get_session_messages(
     session_id,
+    user_id=None,
 ) -> list[dict[str, Any]]:
-    cursor = messages_collection.find(
-        {
-            "session_id": session_id,
-        }
-    ).sort(
+    object_id = to_object_id(session_id)
+
+    if object_id is None:
+        return []
+
+    query: dict[str, Any] = {
+        "session_id": object_id,
+    }
+
+    if user_id is not None:
+        query["user_id"] = user_id
+
+    cursor = messages_collection.find(query).sort(
         "created_at",
         1,
     )
 
-    return await cursor.to_list(
-        length=500
-    )
+    return await cursor.to_list(length=500)
 
 
 async def delete_session_messages(
     session_id,
+    user_id=None,
 ) -> int:
-    result = await messages_collection.delete_many(
-        {
-            "session_id": session_id,
-        }
-    )
+    object_id = to_object_id(session_id)
+
+    if object_id is None:
+        return 0
+
+    query: dict[str, Any] = {
+        "session_id": object_id,
+    }
+
+    if user_id is not None:
+        query["user_id"] = user_id
+
+    result = await messages_collection.delete_many(query)
 
     return result.deleted_count
+
 
 async def get_message_by_id(
     message_id,
     session_id,
     user_id,
 ) -> dict[str, Any] | None:
+    message_object_id = to_object_id(message_id)
+
+    session_object_id = to_object_id(session_id)
+
+    if message_object_id is None or session_object_id is None:
+        return None
+
     return await messages_collection.find_one(
         {
-            "_id": message_id,
-            "session_id": session_id,
+            "_id": message_object_id,
+            "session_id": session_object_id,
             "user_id": user_id,
         }
     )
@@ -168,18 +214,36 @@ async def update_message(
     user_id,
     update_data: dict[str, Any],
 ) -> dict[str, Any] | None:
-    update_data["updated_at"] = datetime.now(
-        timezone.utc
-    )
+    message_object_id = to_object_id(message_id)
+
+    session_object_id = to_object_id(session_id)
+
+    if message_object_id is None or session_object_id is None:
+        return None
+
+    safe_update_data = dict(update_data)
+
+    for field_name in (
+        "_id",
+        "session_id",
+        "user_id",
+        "created_at",
+    ):
+        safe_update_data.pop(
+            field_name,
+            None,
+        )
+
+    safe_update_data["updated_at"] = datetime.now(timezone.utc)
 
     result = await messages_collection.update_one(
         {
-            "_id": message_id,
-            "session_id": session_id,
+            "_id": message_object_id,
+            "session_id": session_object_id,
             "user_id": user_id,
         },
         {
-            "$set": update_data,
+            "$set": safe_update_data,
         },
     )
 
@@ -187,7 +251,7 @@ async def update_message(
         return None
 
     return await get_message_by_id(
-        message_id=message_id,
-        session_id=session_id,
+        message_id=message_object_id,
+        session_id=session_object_id,
         user_id=user_id,
     )

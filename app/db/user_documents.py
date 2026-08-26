@@ -9,9 +9,11 @@ def build_user_document(
 ) -> dict[str, Any]:
     now = datetime.now(timezone.utc)
 
+    normalized_email = email.strip().lower()
+
     return {
-        "email": email,
-        "full_name": full_name,
+        "email": normalized_email,
+        "full_name": full_name.strip(),
         "password_hash": password_hash,
         "role": "user",
         "is_active": True,

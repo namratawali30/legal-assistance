@@ -109,6 +109,7 @@ async def get_chat_detail(
 
     messages = await list_session_messages(
         session_id=session["_id"],
+        user_id=current_user["_id"],
     )
 
     return {
@@ -310,8 +311,8 @@ async def retry_message(
     except ValueError as exc:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=str(exc),
-        )
+            detail="Message cannot be retried",
+        ) from exc
 
     if not message:
         raise HTTPException(
@@ -352,6 +353,7 @@ async def list_messages(
 
     messages = await list_session_messages(
         session_id=session["_id"],
+        user_id=current_user["_id"],
     )
 
     return [

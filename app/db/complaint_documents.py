@@ -1,6 +1,6 @@
 from datetime import date, datetime, timezone
 from typing import Any
-
+from copy import deepcopy
 
 def serialize_incident_date(
     value,
@@ -82,7 +82,13 @@ def build_complaint_document(
             relief_requested,
 
         "additional_details":
-            additional_details or {},
+            (
+                deepcopy(
+                    additional_details
+                )
+                if additional_details is not None
+                else {}
+            ),
 
         "generated_text":
             None,
@@ -90,8 +96,17 @@ def build_complaint_document(
         "sources":
             [],
 
+        "evidence_references":
+            [],
+
         "status":
             "draft",
+
+        "generated_at":
+            None,
+
+        "finalized_at":
+            None,
 
         "created_at":
             now,

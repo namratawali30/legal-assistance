@@ -22,3 +22,9 @@ htmlcov/
 # OS
 .DS_Store
 Thumbs.db
+
+# Private user uploads
+uploads/
+
+evidence_health*.json
+evidence_missing_cleanup_plan*.json

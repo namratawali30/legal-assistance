@@ -26,12 +26,15 @@ def build_message_document(
     sources: list[dict] | None = None,
     status: str = "completed",
 ) -> dict[str, Any]:
+    now = datetime.now(timezone.utc)
+
     return {
         "session_id": session_id,
         "user_id": user_id,
         "role": role,
         "content": content,
-        "sources": sources or [],
-        "created_at": datetime.now(timezone.utc),
+        "sources": list(sources or []),
+        "created_at": now,
+        "updated_at": now,
         "status": status,
     }

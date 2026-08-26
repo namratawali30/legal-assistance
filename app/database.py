@@ -3,15 +3,30 @@ from pymongo import AsyncMongoClient
 from app.config import settings
 
 
-client = AsyncMongoClient(settings.mongodb_url)
+database_name = settings.mongodb_database.strip()
 
-database = client[settings.mongodb_database]
+if not database_name:
+    raise RuntimeError(
+        "MONGODB_DATABASE must not be empty."
+    )
+
+
+client = AsyncMongoClient(
+    settings.mongodb_url
+)
+
+database = client[
+    database_name
+]
 
 
 async def check_database_connection() -> bool:
     try:
-        await client.admin.command("ping")
+        await client.admin.command(
+            "ping"
+        )
         return True
+
     except Exception:
         return False
 

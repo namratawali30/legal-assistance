@@ -12,6 +12,7 @@ from app.core.dependencies import (
 from app.services.complaint_export_service import (
     ComplaintExportContentError,
     ComplaintNotFinalizedError,
+    ComplaintExportGenerationError,
     export_complaint_docx,
     export_complaint_pdf,
 )
@@ -21,23 +22,43 @@ router = APIRouter(
     prefix="/api/v1/complaints",
     tags=["Complaint Exports"],
 )
-
-
 def build_download_headers(
     filename: str,
 ) -> dict[str, str]:
+    safe_filename = (
+        filename
+        .replace("\r", "")
+        .replace("\n", "")
+        .replace('"', "")
+        .replace("\\", "_")
+        .replace("/", "_")
+        .strip()
+    )
+
+    if not safe_filename:
+        safe_filename = (
+            "complaint-export"
+        )
+
+    safe_filename = (
+        safe_filename[:200]
+    )
+
     return {
         "Content-Disposition": (
-            f'attachment; filename="{filename}"'
+            "attachment; "
+            f'filename="{safe_filename}"'
         ),
         "Cache-Control": (
             "no-store, no-cache, "
             "must-revalidate, private"
         ),
-        "Pragma": "no-cache",
-        "X-Content-Type-Options": "nosniff",
-    }
+        "Pragma":
+            "no-cache",
 
+        "X-Content-Type-Options":
+            "nosniff",
+    }
 
 @router.get(
     "/{complaint_id}/export/pdf",
@@ -68,6 +89,16 @@ async def export_complaint_pdf_endpoint(
             ),
             detail=str(exc),
         )
+    except ComplaintExportGenerationError as exc:
+        raise HTTPException(
+            status_code=(
+                status.HTTP_500_INTERNAL_SERVER_ERROR
+            ),
+            detail=(
+                "Complaint export could not be "
+                "generated. Please try again later."
+            ),
+        ) from exc
 
     if not result:
         raise HTTPException(
@@ -115,6 +146,16 @@ async def export_complaint_docx_endpoint(
             ),
             detail=str(exc),
         )
+    except ComplaintExportGenerationError as exc:
+        raise HTTPException(
+            status_code=(
+                status.HTTP_500_INTERNAL_SERVER_ERROR
+            ),
+            detail=(
+                "Complaint export could not be "
+                "generated. Please try again later."
+            ),
+        ) from exc
 
     if not result:
         raise HTTPException(

@@ -1,18 +1,23 @@
-from fastapi import APIRouter, HTTPException, status, Depends
+from fastapi import (
+    APIRouter,
+    Depends,
+    HTTPException,
+    status,
+)
 
+from app.core.dependencies import (
+    get_current_user,
+)
 from app.schemas.user import (
     TokenResponse,
     UserCreate,
-    UserResponse,
     UserLogin,
+    UserResponse,
 )
 from app.services.user_service import (
     login_user,
     register_user,
 )
-from app.core.dependencies import get_current_user, require_role
-
-
 
 router = APIRouter(
     prefix="/api/v1/auth",
@@ -40,8 +45,9 @@ async def register(
     except ValueError as exc:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
-            detail=str(exc),
-        )
+            detail="Email already registered",
+        ) from exc
+
 
 @router.post(
     "/login",
@@ -59,32 +65,19 @@ async def login(
     except ValueError as exc:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail=str(exc),
-            headers={"WWW-Authenticate": "Bearer"},
-        )
+            detail="Invalid email or password",
+            headers={
+                "WWW-Authenticate": "Bearer",
+            },
+        ) from exc
+
+
 @router.get(
     "/me",
     response_model=UserResponse,
 )
 async def get_me(
     current_user: dict = Depends(get_current_user),
-):
-    return {
-        "id": str(current_user["_id"]),
-        "email": current_user["email"],
-        "full_name": current_user["full_name"],
-        "role": current_user["role"],
-        "is_active": current_user["is_active"],
-        "created_at": current_user["created_at"],
-        "updated_at": current_user["updated_at"],
-    }
-
-@router.get(
-    "/admin-test",
-    response_model=UserResponse,
-)
-async def admin_test(
-    current_user: dict = Depends(require_role("admin")),
 ):
     return {
         "id": str(current_user["_id"]),

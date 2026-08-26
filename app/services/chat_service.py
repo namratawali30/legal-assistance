@@ -21,15 +21,18 @@ from app.repositories.chat_repository import (
     delete_chat_session,
     delete_session_messages,
     get_chat_session,
+    get_message_by_id,
     get_session_messages,
     get_user_chat_sessions,
     update_chat_session,
+    update_message,
 )
 
 LLM_TEMPORARY_FAILURE_MESSAGE = (
     "The legal assistance service is temporarily unavailable. "
     "Your question has been saved. Please try again shortly."
 )
+
 
 async def create_session(
     user_id,
@@ -42,14 +45,14 @@ async def create_session(
         category=category,
     )
 
-    session_id = await create_chat_session(
-        session_data
-    )
+    session_id = await create_chat_session(session_data)
 
-    return await get_chat_session(
-        session_id=session_id,
-        user_id=user_id,
-    )
+    # The insert already succeeded. Do not introduce
+    # another DB read merely to construct the response.
+    return {
+        **session_data,
+        "_id": session_id,
+    }
 
 
 async def find_session(
@@ -65,9 +68,7 @@ async def find_session(
 async def list_user_sessions(
     user_id,
 ) -> list[dict[str, Any]]:
-    return await get_user_chat_sessions(
-        user_id
-    )
+    return await get_user_chat_sessions(user_id)
 
 
 async def update_session(
@@ -94,14 +95,34 @@ async def delete_session(
     if not session:
         return False
 
-    await delete_session_messages(
-        session_id=session["_id"],
-    )
-
-    return await delete_chat_session(
+    # Delete the authoritative parent first.
+    #
+    # If parent deletion fails, its history remains intact.
+    deleted = await delete_chat_session(
         session_id=session["_id"],
         user_id=user_id,
     )
+
+    if not deleted:
+        return False
+
+    # Once the parent no longer exists, any residual
+    # messages are inaccessible orphan cleanup rather
+    # than a visible chat whose history disappeared.
+    try:
+        await delete_session_messages(
+            session_id=session["_id"],
+            user_id=user_id,
+        )
+
+    except Exception:
+        # Do not turn an already-successful parent
+        # deletion into an ambiguous client failure.
+        #
+        # Internal cleanup diagnostics belong in 09.14.
+        pass
+
+    return True
 
 
 async def add_message(
@@ -111,27 +132,34 @@ async def add_message(
     content: str,
     sources: list[dict] | None = None,
 ):
-    message_data = build_message_document(
+    session = await get_chat_session(
         session_id=session_id,
+        user_id=user_id,
+    )
+
+    if not session:
+        return None
+
+    message_data = build_message_document(
+        session_id=session["_id"],
         user_id=user_id,
         role=role,
         content=content,
         sources=sources,
     )
 
-    message_id = await create_message(
-        message_data
-    )
-
-    return message_id
+    return await create_message(message_data)
 
 
 async def list_session_messages(
     session_id,
+    user_id=None,
 ):
     return await get_session_messages(
-        session_id
+        session_id=session_id,
+        user_id=user_id,
     )
+
 
 async def create_legal_chat_turn(
     session_id,
@@ -147,7 +175,7 @@ async def create_legal_chat_turn(
         return None
 
     # 1. Retrieve previous conversation
-    previous_messages = await get_session_messages(session["_id"])
+    previous_messages = await get_session_messages(session["_id"], user_id=user_id)
 
     # 2. Build retrieval query from history + current question
     retrieval_query = build_conversation_query(
@@ -188,9 +216,7 @@ async def create_legal_chat_turn(
 
     # 5. Determine assistant status
     assistant_status = (
-        "failed"
-        if rag_result.get("status") == "llm_unavailable"
-        else "completed"
+        "failed" if rag_result.get("status") == "llm_unavailable" else "completed"
     )
 
     # 6. Store assistant response
@@ -222,6 +248,8 @@ async def create_legal_chat_turn(
         },
         "rag": rag_result,
     }
+
+
 async def retry_failed_assistant_message(
     session_id,
     message_id,
@@ -248,22 +276,22 @@ async def retry_failed_assistant_message(
 
     # 3. Only assistant messages can be retried.
     if failed_message.get("role") != "assistant":
-        raise ValueError(
-            "Only assistant messages can be retried"
-        )
+        raise ValueError("Only assistant messages can be retried")
 
     # 4. Only failed messages can be retried.
-    if failed_message.get(
-        "status",
-        "completed",
-    ) != "failed":
-        raise ValueError(
-            "Only failed assistant messages can be retried"
+    if (
+        failed_message.get(
+            "status",
+            "completed",
         )
+        != "failed"
+    ):
+        raise ValueError("Only failed assistant messages can be retried")
 
     # 5. Retrieve conversation history.
     messages = await get_session_messages(
-        session["_id"]
+        session_id=session["_id"],
+        user_id=user_id,
     )
 
     # Find this assistant message inside the ordered history.
@@ -292,28 +320,19 @@ async def retry_failed_assistant_message(
             break
 
     if not original_user_message:
-        raise ValueError(
-            "Original user message could not be found"
-        )
+        raise ValueError("Original user message could not be found")
 
-    question = original_user_message[
-        "content"
-    ]
+    question = original_user_message["content"]
 
     # 7. Build conversation-aware retrieval context
     # using messages BEFORE the original question.
     prior_messages = []
 
     for message in messages:
-        if (
-            message["_id"]
-            == original_user_message["_id"]
-        ):
+        if message["_id"] == original_user_message["_id"]:
             break
 
-        prior_messages.append(
-            message
-        )
+        prior_messages.append(message)
 
     retrieval_query = build_conversation_query(
         current_question=question,
@@ -340,9 +359,7 @@ async def retry_failed_assistant_message(
         user_id=user_id,
         update_data={
             "content": rag_result["answer"],
-            "sources": rag_result[
-                "sources"
-            ],
+            "sources": rag_result["sources"],
             "status": "completed",
         },
     )

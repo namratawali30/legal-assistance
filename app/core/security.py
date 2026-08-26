@@ -1,13 +1,31 @@
 from datetime import datetime, timedelta, timezone
 
 import bcrypt
-from jose import jwt
+from jose import JWTError, jwt
 
 from app.config import settings
 
+BCRYPT_MAX_PASSWORD_BYTES = 72
 
-def hash_password(password: str) -> str:
-    password_bytes = password.encode("utf-8")
+
+def _password_bytes(
+    password: str,
+) -> bytes:
+    if not isinstance(password, str):
+        raise ValueError("Password must be a string.")
+
+    encoded = password.encode("utf-8")
+
+    if len(encoded) > BCRYPT_MAX_PASSWORD_BYTES:
+        raise ValueError("Password exceeds the supported length.")
+
+    return encoded
+
+
+def hash_password(
+    password: str,
+) -> str:
+    password_bytes = _password_bytes(password)
 
     salt = bcrypt.gensalt()
 
@@ -23,27 +41,47 @@ def verify_password(
     plain_password: str,
     hashed_password: str,
 ) -> bool:
-    password_bytes = plain_password.encode("utf-8")
-    hashed_bytes = hashed_password.encode("utf-8")
+    try:
+        password_bytes = _password_bytes(plain_password)
 
-    return bcrypt.checkpw(
-        password_bytes,
-        hashed_bytes,
-    )
+        if not isinstance(
+            hashed_password,
+            str,
+        ):
+            return False
+
+        hashed_bytes = hashed_password.encode("utf-8")
+
+        return bcrypt.checkpw(
+            password_bytes,
+            hashed_bytes,
+        )
+
+    except (
+        ValueError,
+        TypeError,
+    ):
+        # Invalid input or corrupted stored password hash
+        # is an authentication failure, not a server error.
+        return False
 
 
 def create_access_token(
     user_id: str,
     role: str,
 ) -> str:
+    if not isinstance(user_id, str) or not user_id.strip():
+        raise ValueError("A valid user ID is required.")
+
     now = datetime.now(timezone.utc)
 
-    expire = now + timedelta(
-        minutes=settings.access_token_expire_minutes
-    )
+    expire = now + timedelta(minutes=(settings.access_token_expire_minutes))
 
     payload = {
         "sub": user_id,
+        # Keep this claim for compatibility, but
+        # authorization must continue to use the
+        # current MongoDB user record.
         "role": role,
         "iat": now,
         "exp": expire,
@@ -52,9 +90,16 @@ def create_access_token(
     return jwt.encode(
         payload,
         settings.jwt_secret,
-        algorithm=settings.jwt_algorithm,
+        algorithm=(settings.jwt_algorithm),
     )
-def decode_access_token(token: str) -> dict:
+
+
+def decode_access_token(
+    token: str,
+) -> dict:
+    if not isinstance(token, str) or not token.strip():
+        raise ValueError("Invalid or expired token")
+
     try:
         payload = jwt.decode(
             token,
@@ -62,10 +107,16 @@ def decode_access_token(token: str) -> dict:
             algorithms=[settings.jwt_algorithm],
         )
 
-        if not payload.get("sub"):
-            raise ValueError("Invalid token payload")
+    except (
+        JWTError,
+        TypeError,
+        ValueError,
+    ) as exc:
+        raise ValueError("Invalid or expired token") from exc
 
-        return payload
+    subject = payload.get("sub")
 
-    except jwt.JWTError:
-        raise ValueError("Invalid or expired token")
+    if not isinstance(subject, str) or not subject.strip():
+        raise ValueError("Invalid token payload")
+
+    return payload
