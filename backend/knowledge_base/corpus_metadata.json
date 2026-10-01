@@ -1,0 +1,106 @@
+{
+  "version": "1.0.0",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "checksum": "a8f921e49b8032f171",
+  "updated_at": "2026-09-30",
+  "sources": [
+    {
+      "source_id": "consumer_protection_act_2019",
+      "title": "Consumer Protection Act, 2019",
+      "act_number": "Act No. 35 of 2019",
+      "jurisdiction": "India (National)",
+      "geographic_applicability": "Whole of India except Jammu & Kashmir (applies to e-commerce and all states)",
+      "publication_date": "2019-08-09",
+      "effective_date": "2020-07-20",
+      "official_url": "https://www.indiacode.nic.in/handle/123456789/15256",
+      "verification_date": "2026-09-25",
+      "review_status": "verified_official",
+      "supported_topics": [
+        "Defective Goods",
+        "Deficient Services",
+        "Unfair Trade Practices",
+        "E-Commerce Complaints",
+        "District Consumer Commission Filing",
+        "Product Liability"
+      ]
+    },
+    {
+      "source_id": "ugc_anti_ragging_regulations_2009",
+      "title": "UGC Regulations on Curbing the Menace of Ragging in Higher Educational Institutions, 2009",
+      "jurisdiction": "India (Higher Education Institutions)",
+      "geographic_applicability": "All UGC recognized Universities and Colleges in India",
+      "publication_date": "2009-06-17",
+      "effective_date": "2009-06-17",
+      "amendments": [
+        {
+          "title": "Second Amendment Regulations 2013",
+          "date": "2013-03-25"
+        },
+        {
+          "title": "Third Amendment Regulations 2016",
+          "date": "2016-06-29"
+        }
+      ],
+      "official_url": "https://www.ugc.gov.in/pdfnews/9541841_anti-ragging-regulations-2009.pdf",
+      "verification_date": "2026-09-25",
+      "review_status": "verified_official",
+      "supported_topics": [
+        "Ragging Complaints",
+        "Anti-Ragging Committee Actions",
+        "FIR Filing for Ragging",
+        "Student Safety in Hostels"
+      ]
+    },
+    {
+      "source_id": "posh_act_2013",
+      "title": "Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "jurisdiction": "India (Workplaces)",
+      "geographic_applicability": "All workplaces in India (public, private, unorganized)",
+      "publication_date": "2013-04-23",
+      "effective_date": "2013-12-09",
+      "official_url": "https://www.indiacode.nic.in/handle/123456789/2104",
+      "verification_date": "2026-09-25",
+      "review_status": "verified_official",
+      "supported_topics": [
+        "Workplace Sexual Harassment Complaints",
+        "Internal Complaints Committee (ICC) Procedure",
+        "Local Complaints Committee (LCC)",
+        "Interim Relief"
+      ]
+    },
+    {
+      "source_id": "rte_act_2009",
+      "title": "Right of Children to Free and Compulsory Education Act, 2009",
+      "jurisdiction": "India (School Education)",
+      "geographic_applicability": "Elementary schools across India",
+      "publication_date": "2009-08-26",
+      "effective_date": "2010-04-01",
+      "official_url": "https://www.indiacode.nic.in/handle/123456789/2086",
+      "verification_date": "2026-09-25",
+      "review_status": "verified_official",
+      "supported_topics": [
+        "Free Elementary Education",
+        "25% EWS Quota Admissions",
+        "Capitation Fee Prohibition",
+        "Screening Procedure Ban"
+      ]
+    },
+    {
+      "source_id": "code_on_wages_2019",
+      "title": "Code on Wages, 2019",
+      "jurisdiction": "India (Labour & Employment)",
+      "geographic_applicability": "All establishments in India",
+      "publication_date": "2019-08-08",
+      "effective_date": "2019-08-08",
+      "official_url": "https://www.indiacode.nic.in/handle/123456789/13076",
+      "verification_date": "2026-09-25",
+      "review_status": "verified_official",
+      "supported_topics": [
+        "Minimum Wages",
+        "Timely Payment of Wages",
+        "Deduction Limits",
+        "Equal Remuneration"
+      ]
+    }
+  ]
+}

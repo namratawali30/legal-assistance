@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - APP_ENV=production
+      - RELEASE_ID=${RELEASE_ID:-dev-local}
+      - MONGODB_URL=mongodb://mongo:27017/nyaya_prod
+      - MONGODB_DATABASE=nyaya_prod
+      - STORAGE_BACKEND=s3
+      - REQUIRE_OBJECT_STORAGE_IN_PRODUCTION=true
+      - OBJECT_STORAGE_BUCKET=${OBJECT_STORAGE_BUCKET:-nyaya-private-evidence}
+      - OBJECT_STORAGE_ACCESS_KEY=${OBJECT_STORAGE_ACCESS_KEY}
+      - OBJECT_STORAGE_SECRET_KEY=${OBJECT_STORAGE_SECRET_KEY}
+      - RATE_LIMIT_BACKEND=redis
+      - REQUIRE_SHARED_RATE_LIMITER_IN_PRODUCTION=true
+      - REDIS_URL=redis://redis:6379/0
+      - MALWARE_SCANNER_TYPE=clamav
+      - REQUIRE_REAL_MALWARE_SCANNER_IN_PRODUCTION=true
+      - CLAMAV_HOST=clamav
+      - CLAMAV_PORT=3310
+      - JWT_SECRET=${JWT_SECRET}
+      - LLM_API_KEY=${LLM_API_KEY}
+      - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-https://nyaya.ai}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS:-nyaya.ai,backend}
+    ports:
+      - "8000:8000"
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      clamav:
+        condition: service_started
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:8000}
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  mongo:
+    image: mongo:7.0
+    restart: always
+    environment:
+      - MONGO_INITDB_DATABASE=nyaya_prod
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7.2-alpine
+    restart: always
+    command: redis-server --save 60 1 --loglevel notice
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  clamav:
+    image: clamav/clamav:latest
+    restart: always
+    ports:
+      - "3310:3310"
+
+volumes:
+  mongo_data:
+  redis_data:

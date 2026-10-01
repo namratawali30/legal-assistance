@@ -1,0 +1,33 @@
+======================================================================
+              CUSTOMER SUPPORT CORRESPONDENCE TRANSCRIPT
+======================================================================
+Date: 10-Feb-2026
+From: Meera Kapoor <meera.kapoor.test@example.com>
+To: Support Team <support@apexelectronics.test>
+Subject: Urgent: Defective ApexBook Pro 14 (Inv # APEX-2026-9842)
+
+Dear Support Team,
+
+I purchased an ApexBook Pro 14 laptop on 15-Jan-2026 (Invoice # APEX-2026-9842).
+Starting 5-Feb-2026, the laptop continuously shuts down automatically within 5 minutes of powering on. 
+
+I took the device to your authorized service center in Pune on 8-Feb-2026. The center technician acknowledged the mother-board power defect but insisted I must pay INR 12,000 extra for repairs, claiming power issues are excluded from warranty.
+
+Since the product is under 1-year warranty and broke within 3 weeks of purchase, I request free repair, replacement, or full refund as per Consumer Protection Act guidelines.
+
+Regards,
+Meera Kapoor
+
+----------------------------------------------------------------------
+Date: 12-Feb-2026
+From: Support Team <support@apexelectronics.test>
+To: Meera Kapoor <meera.kapoor.test@example.com>
+Subject: Re: Urgent: Defective ApexBook Pro 14 (Inv # APEX-2026-9842)
+
+Dear Customer,
+
+We have reviewed your request. As per store policy, internal hardware power failure is not covered for free replacement after 14 days of purchase. You may pay the service center charge of INR 12,000 to proceed with repair. We cannot offer a refund or free replacement.
+
+Regards,
+Apex Customer Care
+======================================================================

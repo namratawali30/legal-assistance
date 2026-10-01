@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - APP_ENV=staging
+      - RELEASE_ID=${RELEASE_ID:-staging-latest}
+      - MONGODB_URL=mongodb://mongo:27017/nyaya_staging
+      - MONGODB_DATABASE=nyaya_staging
+      - STORAGE_BACKEND=local
+      - RATE_LIMIT_BACKEND=memory
+      - MALWARE_SCANNER_TYPE=mock
+      - JWT_SECRET=staging_jwt_secret_must_be_32_bytes_minimum_string
+      - LLM_API_KEY=mock-staging-llm-key
+      - CORS_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:8080
+      - ALLOWED_HOSTS=localhost,backend,staging.nyaya.internal
+    ports:
+      - "8000:8000"
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: http://localhost:8000
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+  mongo:
+    image: mongo:7.0
+    restart: always
+    environment:
+      - MONGO_INITDB_DATABASE=nyaya_staging
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5

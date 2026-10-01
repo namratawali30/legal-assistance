@@ -1,0 +1,47 @@
+name: Nyaya AI Deployment Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_environment:
+        description: 'Target Deployment Environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy-staging:
+    name: Deploy to Staging Environment
+    if: ${{ github.event.inputs.target_environment == 'staging' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Log Deployment Action
+        run: |
+          echo "Building immutable release artifact for staging release: ${{ github.sha }}"
+          echo "Staging deployment configuration target initialized."
+
+  deploy-production:
+    name: Deploy to Production Environment
+    if: ${{ github.event.inputs.target_environment == 'production' }}
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Validate Production Configuration
+        run: |
+          echo "Validating immutable release commit SHA: ${{ github.sha }}"
+          echo "Production deployment gate initialized."

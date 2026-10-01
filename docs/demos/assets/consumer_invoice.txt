@@ -1,0 +1,26 @@
+======================================================================
+                      TAX INVOICE / PURCHASE RECEIPT
+                   Apex Electronics Pvt. Ltd. (Synthetic)
+                     124 Commercial Plaza, Pune 411001
+======================================================================
+Invoice No: APEX-2026-9842
+Invoice Date: 15-Jan-2026
+Customer Name: Meera Kapoor
+Customer Email: meera.kapoor.test@example.com
+Customer Phone: 9876500000 (Fictional)
+
+ITEM DETAILS:
+----------------------------------------------------------------------
+Item Description       : ApexBook Pro 14 Laptop (Serial # APX-998822)
+Warranty Period        : 1 Year Manufacturer Warranty
+Quantity               : 1
+Unit Price             : INR 45,000.00
+GST (18%)              : INR 8,100.00
+----------------------------------------------------------------------
+TOTAL AMOUNT PAID      : INR 53,100.00
+Payment Mode           : UPI / Net Banking (Ref: UPI/998127391)
+
+TERMS & CONDITIONS:
+1. All hardware products carry 1-year manufacturer warranty from purchase date.
+2. Defective items reported within warranty period are eligible for free repair or replacement under Consumer Protection Act 2019 guidelines.
+======================================================================

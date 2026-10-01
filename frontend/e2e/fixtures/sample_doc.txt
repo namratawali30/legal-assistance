@@ -1,0 +1,7 @@
+INVOICE & SERVICE RECEIPT
+Receipt No: INV-2026-8891
+Date: 15 January 2026
+Seller: Apex Electronics Pvt Ltd
+Item: Smart LED Television 55 Inch
+Amount Paid: INR 45,000
+Status: Defective display panel delivered. Seller refused repair or refund.
